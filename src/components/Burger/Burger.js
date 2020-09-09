@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Burger.module.css'
-import BurgerIngredient from './BurgerGredient/BurgerIngredient';
+import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = (props) => {
     let transformedIngredient = Object.keys(props.ingredients).map(igKey => {
@@ -10,6 +10,7 @@ const Burger = (props) => {
     if (transformedIngredient.length === 0) {
         transformedIngredient = <p>Please add some ingredients</p>
     }
+    console.log(transformedIngredient)
     return (
         <div className={classes.Burger}>
             <BurgerIngredient type="bread-top" />
