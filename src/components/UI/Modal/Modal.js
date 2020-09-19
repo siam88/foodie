@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Modal.module.css';
 import Aux from '../../../hoc/Aux';
 import Backdrop from '../Backdrop/Backdrop';
-
+import props from 'prop-types'
 const modal = (props) => (
     <Aux>
         <Backdrop show={props.show} clicked={props.modalClosed} />
