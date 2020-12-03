@@ -43,6 +43,7 @@ class BurgerBuilder extends Component {
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
+        console.log(sum)
         this.setState({ purchasable: sum > 0 });
     }
 
@@ -86,27 +87,27 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true })
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: "Rafsan",
-                address: {
-                    street: "410 gawair",
-                    zipcode: "1230",
-                    country: "Bangladesh    "
-                },
-                email: "xyz@gmail.com"
-            },
-            delivaryMethod: "fastest"
-        }
+        // this.setState({ loading: true })
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: "Rafsan",
+        //         address: {
+        //             street: "410 gawair",
+        //             zipcode: "1230",
+        //             country: "Bangladesh    "
+        //         },
+        //         email: "xyz@gmail.com"
+        //     },
+        //     delivaryMethod: "fastest"
+        // }
 
-        axios.post('/orders.json', order)
-            .then(response => this.setState({ loading: false, purchasing: false }))
-            .catch(error => this.setState({ loading: false, purchasing: false }));
+        // axios.post('/orders.json', order)
+        //     .then(response => this.setState({ loading: false, purchasing: false }))
+        //     .catch(error => this.setState({ loading: false, purchasing: false }));
 
-
+        this.props.history.push('/checkout');
     }
 
 
@@ -117,6 +118,7 @@ class BurgerBuilder extends Component {
             ...this.state.ingredients
         };
         for (let key in disabledInfo) {
+
             disabledInfo[key] = disabledInfo[key] <= 0
         }
 
