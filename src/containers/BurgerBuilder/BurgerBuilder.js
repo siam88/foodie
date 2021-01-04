@@ -43,7 +43,6 @@ class BurgerBuilder extends Component {
             .reduce((sum, el) => {
                 return sum + el;
             }, 0);
-        console.log(sum)
         this.setState({ purchasable: sum > 0 });
     }
 
@@ -95,7 +94,6 @@ class BurgerBuilder extends Component {
         }
         queryParams.push('price=' + this.state.totalPrice)
         const queryStrings = queryParams.join('&');
-        console.log(queryStrings)
         this.props.history.push({
             pathname: '/checkout',
             search: '?' + queryStrings

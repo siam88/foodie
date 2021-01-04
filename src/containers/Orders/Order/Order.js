@@ -20,6 +20,7 @@ const Order = (props) => {
 
     return (
         < div className={classes.Order}>
+            <h4>Order Id: {props.id}</h4>
             <p>Ingredients :{ingredientOutput}</p>
             <p>Price : <strong>BDT {Number.parseFloat(props.price).toFixed()}</strong></p>
 

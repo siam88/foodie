@@ -19,11 +19,15 @@ class Layout extends Component {
             return { showSideDrawer: !prevState.showSideDrawer };
         });
     }
+    RedirectToMainPage = () => {
+        console.log("===", this.props.children.props.children)
+
+    }
 
     render() {
         return (
             <Aux>
-                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} />
+                <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler} RedirectToMainPage={this.RedirectToMainPage} />
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler} />

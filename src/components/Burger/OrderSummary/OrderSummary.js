@@ -11,10 +11,10 @@ class OrderSummary extends Component {
             .map(igKey => {
                 return (
                     <Aux>
-
-                        <li key={igKey}>
+                        {this.props.ingredients[igKey] == 0 ? null : <li key={igKey}>
                             <span style={{ textTransform: 'capitalize' }}>{igKey}</span>: {this.props.ingredients[igKey]}
-                        </li>
+                        </li>}
+
                     </Aux>
                 );
             });
